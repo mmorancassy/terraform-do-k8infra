@@ -20,6 +20,16 @@
 
 ## Basic usage 
 
+- It is possible to retrieve an existing ssh key stored in a Digital Ocean account, through a data source, or by generating it locally, just setting the variable "local_sshkey" to true. That ssh key allows access to all droplets via ssh.
+
+```
+variable "local_sshkey" {
+  type        = bool
+  description = "Determine whether to generate and load a local ssh_key, if set to true it does"
+  default     = true
+}
+```
+
 - Infrastructure plan and provision
 
 ```
@@ -36,5 +46,5 @@
 
 ## Composition
 
-![composition](https://github.com/mmorancassy/terraform-do-k8infra/images/terraform-do-k8s.jpg "Terraform composition")
+![composition](https://github.com/mmorancassy/terraform-do-k8infra/blob/main/images/terraform-do-k8s.jpg "Terraform composition")
  
