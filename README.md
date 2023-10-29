@@ -9,11 +9,13 @@
 
 ## Terraform code structure
 
+```
 |--+ root module
    +- ssh module (generated locally or retrived from a ssh_key already provisioned)
    +- droplet module 
    +- tag module
    +- vpc module
    +- project module
+```   
 
  
