@@ -16,6 +16,25 @@
    +- tag module
    +- vpc module
    +- project module
-```   
+```
 
+## Basic usage 
+
+- Infrastructure plan and provision
+
+```
+> terraform init
+> terraform plan -auto-approve
+> terraform apply -auto-approve
+```
+
+- Infrastructure deletion
+
+```
+> terraform destroy 
+```
+
+## Composition
+
+![composition](https://github.com/mmorancassy/terraform-do-k8infra/images/terraform-do-k8s.jpg "Terraform composition")
  
