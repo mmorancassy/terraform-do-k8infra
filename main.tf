@@ -61,6 +61,17 @@ module "bucket" {
 }
 
 ###########################################################################
+##### container registry
+
+module "registry" {
+  source =  "./modules/registry"
+
+  name                   = var.registry_name
+  subscription_tier_slug = var.registry_subscription_tier_slug
+  region                 = var.registry_region
+}
+
+###########################################################################
 ##### digital ocean project 
 
 module "terraform_project" {
