@@ -1,5 +1,7 @@
 # Terraform configuration files for provisioning a basic Kubernetes infrastructure on Digital Ocean
 
+![Terraform plan status](https://github.com/github/terraform-do-k8infra/actions/workflows/ci-terraform-do-k8infra.yml/badge.svg?branch=main)
+
 ## Infrastructure summary 
 
 - 1 Droplet for a Kubernetes master node
