@@ -1,7 +1,11 @@
+###########################################################################
 ##### input variables
 
 variable "do_token" {}
+variable "access_id" {}
+variable "secret_key" {}
 
+###########################################################################
 ##### vpc variables
 
 variable "vpc_name" {
@@ -22,6 +26,7 @@ variable "vpc_ip_range" {
   default     = "10.10.10.0/24"
 }
 
+###########################################################################
 ##### tag variables
 
 variable "tag_attributes" {
@@ -34,6 +39,7 @@ variable "tag_attributes" {
   ] 
 }
 
+###########################################################################
 ##### droplet module variables
 
 variable "node_attributes" {
@@ -53,6 +59,34 @@ variable "node_attributes" {
   ]
 }
 
+###########################################################################
+##### spaces bucket variables
+
+variable "bucket_name" {
+  type        = string
+  description = "The name of the bucket"
+  default     = "bucketstorage"
+}
+
+variable "bucket_region" {
+  type        = string
+  description = "Region in which the bucket is located"
+  default     = "ams3"
+}
+
+variable "bucket_acl" {
+  type        = string
+  description = "Canned ACL applied on bucket creation"
+  default     = "private"
+}
+
+variable "bucket_force_destroy" {
+  type        = bool
+  description = "Unless true, the bucket will only be destroyed if empty" 
+  default     = true
+}
+
+###########################################################################
 ##### project module variables
 
 variable "project_name" {
@@ -61,6 +95,7 @@ variable "project_name" {
   default     = "kubernetes DEV cluster"
 }
 
+###########################################################################
 ##### ssh module variables
 
 variable "local_sshkey" {

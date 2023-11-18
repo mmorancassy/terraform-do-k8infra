@@ -5,6 +5,7 @@
 - 1 Droplet for a Kubernetes master node
 - 2 Droplets for a Kubernetes worker nodes
 - 1 VPC
+- 1 Bucket
 - A Digital Ocean project that contains all of these resources
 
 ## Terraform code structure
@@ -15,6 +16,7 @@
    +- droplet module 
    +- tag module
    +- vpc module
+   +- bucket module
    +- project module
 ```
 
