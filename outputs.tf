@@ -48,3 +48,15 @@ output "id" {
   value       = values(module.tags)[*].id
   description = "The ids of the tag"
 }
+
+## bucket
+
+output "bucket_domain_name" {
+    value       = module.bucket.bucket_domain_name
+    description = "The FQDN of the bucket"
+}
+
+output "bucket_endpoint" {
+    value       = module.bucket.bucket_endpoint
+    description = "The FQDN of the bucket without the bucket name"
+}

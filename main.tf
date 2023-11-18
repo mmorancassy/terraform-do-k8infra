@@ -1,3 +1,4 @@
+###########################################################################
 ##### ssh keys 
 
 module "ssh" {
@@ -8,6 +9,7 @@ module "ssh" {
   local_sshkey = var.local_sshkey
 }
 
+###########################################################################
 ##### tags
 
 module "tags" {
@@ -18,6 +20,7 @@ module "tags" {
   name   = each.value.name
  }
 
+###########################################################################
 ##### vpc
 
 module "kubernetes_vpc" {
@@ -28,6 +31,7 @@ module "kubernetes_vpc" {
   vpc_ip_range = var.vpc_ip_range  
 }
 
+###########################################################################
 ##### nodes 
 
 module "kubernetes_nodes" {
@@ -44,13 +48,27 @@ module "kubernetes_nodes" {
   tags        = values(module.tags)[*].id
 }
 
+###########################################################################
+##### bucket
+
+module "bucket" {
+  source  = "./modules/bucket"
+
+  name           = var.bucket_name
+  region         = var.bucket_region
+  acl            = var.bucket_acl
+  force_destroy  = var.bucket_force_destroy
+}
+
+###########################################################################
 ##### digital ocean project 
 
 module "terraform_project" {
   source            = "./modules/project"
 
   project_name      = var.project_name  
-  project_resources = values(module.kubernetes_nodes)[*].droplet_urn
+  project_resources = flatten([values(module.kubernetes_nodes)[*].droplet_urn, module.bucket.bucket_urn])
+
 }
 
 
