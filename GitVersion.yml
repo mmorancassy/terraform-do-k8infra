@@ -1,0 +1,9 @@
+next-version: 1.0.1
+mode: ContinuousDelivery
+increment: Inherit
+tag-prefix: '[vV]'
+branches: {}
+ignore:
+  sha: []
+merge-message-formats:
+  tfs: '^Merged (?:PR (?<PullRequestNumber>\d+)): Merge (?<SourceBranch>.+) to (?<TargetBranch>.+)'
