@@ -8,6 +8,7 @@
 - 2 Droplets for a Kubernetes worker nodes
 - 1 VPC
 - 1 Bucket
+- 1 Container registry
 - A Digital Ocean project that contains all of these resources
 
 ## Terraform code structure
@@ -19,6 +20,7 @@
    +- tag module
    +- vpc module
    +- bucket module
+   +- registry module
    +- project module
 ```
 

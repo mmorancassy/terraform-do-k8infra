@@ -87,6 +87,27 @@ variable "bucket_force_destroy" {
 }
 
 ###########################################################################
+##### container registry variables
+
+variable "registry_name" {
+  type        = string
+  description = "The name of the container_registry"
+  default     = "k8sregistry"
+}
+
+variable "registry_subscription_tier_slug" {
+  type        = string
+  description = "The slug identifier for the subscription tier to use"
+  default     = "starter"
+}
+
+variable "registry_region" {
+  type        = string
+  description = "The slug identifier of for region where registry data will be stored"
+  default     = "ams3"
+}
+
+###########################################################################
 ##### project module variables
 
 variable "project_name" {

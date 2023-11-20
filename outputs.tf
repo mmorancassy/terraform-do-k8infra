@@ -60,3 +60,15 @@ output "bucket_endpoint" {
     value       = module.bucket.bucket_endpoint
     description = "The FQDN of the bucket without the bucket name"
 }
+
+## registry
+
+output "registry_endpoint" {
+    value       = module.registry.endpoint
+    description = "The URL endpoint of the container registry"
+}
+
+output "registry_server_url" {
+    value       = module.registry.server_url
+    description = "The domain of the container registry"
+}
